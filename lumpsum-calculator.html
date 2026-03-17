@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumpsum Calculator | CalcVerse</title>
+    <meta name="description" content="Calculate the future value of your one-time investment with our free lumpsum calculator.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="antialiased" data-calc-id="lumpsum-calculator">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">C</div>
+                <span class="text-xl font-bold tracking-tight">CalcVerse</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon dark:hidden"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun hidden dark:block"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-4">
+                <div class="card p-6 sticky top-24">
+                    <h1 class="text-2xl font-bold mb-6">Lumpsum Calculator</h1>
+                    <div id="calculator-inputs"></div>
+                    <div class="flex gap-3 mt-6">
+                        <button id="calculate-btn" class="btn-primary flex-1">Calculate</button>
+                        <button id="reset-btn" class="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="card p-6">
+                        <h2 class="text-lg font-bold mb-4">Result Summary</h2>
+                        <div id="results-summary" class="space-y-4"></div>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center justify-center">
+                        <div class="w-full h-64 relative"><canvas id="result-chart"></canvas></div>
+                    </div>
+                </div>
+                <div class="card p-6 mb-8">
+                    <h2 class="text-lg font-bold mb-4">Growth Table</h2>
+                    <div id="results-table"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/config.js"></script>
+    <script src="/js/calculator-engine.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

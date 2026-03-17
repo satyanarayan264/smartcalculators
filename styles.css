@@ -1,1 +1,92 @@
-body { font-family: Arial, sans-serif; }
+/* Custom styles for CalcVerse */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent: #22c55e;
+    --bg: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+}
+
+.dark {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    background-color: var(--card-bg);
+    color: var(--text-main);
+}
+
+.input-field:focus {
+    outline: 2px solid var(--primary);
+    border-color: transparent;
+}
+
+/* AdSense Placeholders */
+.adsense-placeholder {
+    background: repeating-linear-gradient(
+        45deg,
+        #f8fafc,
+        #f8fafc 10px,
+        #f1f5f9 10px,
+        #f1f5f9 20px
+    );
+    border: 1px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    margin: 1rem 0;
+}
+
+.dark .adsense-placeholder {
+    background: repeating-linear-gradient(
+        45deg,
+        #1e293b,
+        #1e293b 10px,
+        #0f172a 10px,
+        #0f172a 20px
+    );
+    border-color: #334155;
+}
